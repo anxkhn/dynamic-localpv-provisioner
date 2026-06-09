@@ -158,7 +158,7 @@ spec:
             command:
             - sh
             - -c
-            - test `pgrep -c "^provisioner-loc.*"` = 1
+            - test `pgrep -cf "provisioner-localpv"` = 1
           initialDelaySeconds: {{ .Values.localpv.healthCheck.initialDelaySeconds }}
           periodSeconds: {{ .Values.localpv.healthCheck.periodSeconds }}
         volumeMounts:
